@@ -1,0 +1,39 @@
+type Lecturer{
+   lecturerId : ID!
+   lecturerName : String
+   address : String
+   department : String
+   eMail : String
+   phone : String
+   courseHandled : String
+}
+
+type Query {
+    findAll : [Lecturer]
+    getLecturerById(id:ID): Lecturer
+}
+
+type Mutation {
+    createLecturer(
+        lecturerName: String!,
+        address: String!,
+        department: String!,
+        eMail: String!,
+        phone: String!,
+        courseHandled: String!
+    ): Lecturer
+    
+        updateLecturer(
+        lecturerId: ID!
+        lecturerName: String,
+        address: String,
+        department: String,
+        eMail: String,
+        phone: String,
+        courseHandled: String
+    ): Lecturer
+    
+        deleteLecturer(
+        lecturerId: ID!,
+    ): Lecturer
+}
