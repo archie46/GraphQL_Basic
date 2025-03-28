@@ -16,8 +16,9 @@ public class LecturerService {
 	@Autowired
 	private LecturerRepository lecturerRepository;
 	
-	public void saveLecturer(Lecturer lecturer) {
+	public Long saveLecturer(Lecturer lecturer) {
 		lecturerRepository.save(lecturer);
+		return lecturer.getLecturerId();
 	}
 	
 	public List<Lecturer> findAllLecturers(){
